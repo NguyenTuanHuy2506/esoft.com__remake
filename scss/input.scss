@@ -10,8 +10,8 @@ body{
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	margin-bottom: 0 !important;
 }
-//@media (min-width: 1200px){
-//.container{max-width: 1170px !important; padding: 0px !important;}}
+@media (min-width: 1200px){
+.container{max-width: 1170px !important; padding: 0px !important;}}
 .container-fluid{padding-right: 0px !important;padding-left: 0px !important;}
 
 /*------font size--------*/
@@ -52,7 +52,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	@extend .text__custom--500;
 }
 .a--link:hover{
-	color:inherit;
+	color:$c-orange;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -87,12 +87,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 .arrow--down::after{
 	font-family: FontAwesome;
-   content: "\f095";
-}
-.btn-loginTop{
-	width: 8.5em;
-	border-radius:0.5em !important;
-	background-color: rgb(255, 130, 0) !important;
+	content:"\f107";
 }
 
 .magic-line::after{
@@ -147,13 +142,12 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	padding: .5rem;
 	transition: all .3s ease;
 	margin: 0 auto;
-	//overflow: hidden;
+	overflow: hidden;
 	.content__title{
-		max-width: 100%;
-		h1,h2,h3,h4,h5{
-			font-weight: 700;
-			text-transform: uppercase;
-		}
+		font-size: 2.4rem;
+		display: block;
+		font-weight: 700;
+		text-transform: uppercase;
 	}
 	.content__description{
 		padding: 1rem;
@@ -217,10 +211,12 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	display: flex;
 	padding: 1rem;
 	margin: 1rem 0;
+	overflow: hidden;
 	.list-box__item{
 		max-height: 30rem;
 		display: inherit;
 		align-items: center;
+		overflow: hidden;
 		.list-box__img{
 			width:100%;
 			height: 100%;
@@ -237,6 +233,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	}
 	.list-box--right, .list-box--left{
 		padding: 1rem;
+		text-align: center;
 	}
 	.list-box--right{
 		width: 40%;
@@ -248,11 +245,6 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .list-box--reverse{
 		flex-direction: row-reverse;
 	}
-
-@keyframes mow{
-	from {transform: scale(0.8);opacity:1;}
-  	to {transform:scale(1.5);opacity:0;}
-}
 
 .btn-in-topSlide{
 	font-size: 0.9em !important;
@@ -266,20 +258,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .btn-in-topSlide:hover{
 	transform: translateY(-10px);
 }
-.working-here{
-	
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	position: relative;
-	height: 26em;
-	.working-imgRight{
-		position: absolute;
-		right: 16%;
-		bottom: 0em;
-		height: 30em;
-	}
-}
+
 .card__list{
 	width: 100%;
 	display: flex;
@@ -287,16 +266,17 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	justify-content: center;
 	flex-wrap: wrap;
 	.card__item{
-		min-width: 16.5em;
-		min-height: 16.5em;
+		min-width: 16.5rem;
+		min-height: 16.5rem;
 		border-radius: .2rem;
-		//box-shadow: 0em 0em .5em 0em $c-gray;
 		border: .01rem solid #ccc;
 		text-align: center;
 		margin: 1rem;
+		display: flex;
+		flex-direction: column;
 		transition: all .5s ease;
 		.card__img{
-			width: 50%;
+			width: 100%;
 			height: auto;
 			margin: 1rem auto;
 		}
@@ -311,56 +291,20 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .card__item:hover{
 	transform: scale(1.1);
 	box-shadow: 0em 0em .5em 0em $c-gray;
-
 }
 
-
-@keyframes aniSlideTop{
-	0%{
-		transform: translateY(-100%);opacity: 0;
-	}
-	100%{
-		
-		transform: translateY(0);opacity: 1;
-	}
-}
-@keyframes aniSlideLeft{
-	0%{
-		transform: translateX(-100%);opacity: 0;
-	}
-	100%{
-		
-		transform: translateX(0);opacity: 1;
-	}
-}
-@keyframes aniSlideRight{
-	0%{ 
-		transform: translateX(100%);opacity: 0;
-	}
-	100%{
-		transform: translateX(0%);opacity: 1;
-	}
-}
-@keyframes aniSlideBottom{
-	0%{
-		transform: translateY(100%);opacity: 0;
-	}
-	100%{
-		transform: translateY(0);opacity: 1;
-	}
-}
 //----xl
-@media (min-width: 1200px){
-	.nav-item{
-		pointer-events: none; 
-	}
+@media only screen and (min-width: 992px){
+	// .nav-item{
+	// 	pointer-events: ; 
+	// }
 	.nav-item:hover .top-menu__sub{	
 		display: block;
 	}
 	
 }
 //----lg
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
 	.hero{
 		flex-direction: row-reverse;
 		&__img{
@@ -370,6 +314,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 		}
 		&__content{
 			width: 100%;
+			height: 100%;
 			position: absolute;
 			top: 0;
 			z-index: 1;
@@ -393,13 +338,12 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	    top: 73px;
 	    left: 0;
 	    height: 100vh;
-	    padding-left: 1em;
-	    padding-right: 1em;
+	    padding-left: 1rem;
+	    padding-right: 1rem;
 	    min-width: 30%;
 	    transform: translateX(-100%);
 	    transition: all .3s ease;
-	    display: none;
-	    font-size: 2vw; 
+	    display: none; 
 	}
 
   	.navbar-collapse.collapsing {
@@ -412,6 +356,14 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
   	.navbar-collapse.show {
     	transform: translateX(0%); 
     }
+    .content__list{
+    	.content__item{
+			.content__title{
+				color: white;
+			}
+    	}
+    }
+    
 }
 //----md
 @media only screen and (max-width: 768px){
@@ -442,12 +394,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     	display: block;
     	.list-box--right, .list-box--left{
 			width: 100%;
+			text-align: center;
     	}
 		.list-box__item{
-			min-height: auto;
-			button{
-				display: none;
-			}
+			max-height: 50vh;
 			.content__item{
 				display: flex;
 			}
@@ -455,21 +405,12 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     }
 }
 //------sm
-@media (max-width: 576px){
+@media only screen and (max-width: 576px){
+	.btn--circle{
+		margin: .4rem;
+	}
+}
 
-}
-.animate--slideTop{
-	animation: 1s ease-out 0s 1 aniSlideTop;
-}
-.animate--slideLeft{
-	animation: 1s ease-out 0s 1 aniSlideLeft;
-}
-.animate--slideRight{
-	animation: 1s ease-out 0s 1 aniSlideRight;
-}
-.animate--slideBottom{
-	animation: 1s ease-out 0s 1 aniSlideBottom;
-}
 /* width */
 ::-webkit-scrollbar {
   width: .5rem; }
@@ -480,9 +421,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: blue;
+  background-color: $c-orange ;
   border-radius: .4rem; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4da6ff; }
+
